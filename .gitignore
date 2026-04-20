@@ -44,6 +44,7 @@ Data/Recordings/
 Data/Cache/
 Data/SelfEdits/
 Logs/
+Data/companion_chat.json
 
 # Jarvis-specific — Temp / Runtime
 *.tmp

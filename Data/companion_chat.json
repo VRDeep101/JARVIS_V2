@@ -1,152 +1,152 @@
 [
   {
-    "role": "assistant",
-    "content": "Got it, Sir. Blue it is.",
-    "timestamp": "2026-04-19T22:26:47.964744",
+    "role": "user",
+    "content": "Open Cloud AI.",
+    "timestamp": "2026-04-20T20:12:12.451228",
     "mode": "neural"
   },
   {
     "role": "user",
-    "content": "my favorite color is blue",
-    "timestamp": "2026-04-19T22:27:49.174601",
-    "mode": "offline"
-  },
-  {
-    "role": "assistant",
-    "content": "Got it, Sir. Blue it is.",
-    "timestamp": "2026-04-19T22:27:49.174601",
-    "mode": "offline"
-  },
-  {
-    "role": "user",
-    "content": "Open settings.",
-    "timestamp": "2026-04-20T19:26:38.296595",
+    "content": "Open spotify.",
+    "timestamp": "2026-04-20T20:12:48.157833",
     "mode": "neural"
   },
   {
     "role": "user",
-    "content": "Open Google Chrome and WhatsApp.",
-    "timestamp": "2026-04-20T19:27:10.208193",
+    "content": "Play can we Kiss Forever.",
+    "timestamp": "2026-04-20T20:13:06.075129",
     "mode": "neural"
   },
   {
     "role": "user",
-    "content": "Open WhatsApp.",
-    "timestamp": "2026-04-20T19:28:12.534325",
+    "content": "Play can we Kiss Forever on YouTube.",
+    "timestamp": "2026-04-20T20:13:40.504717",
     "mode": "neural"
   },
   {
     "role": "user",
-    "content": "Send hi to Panda.",
-    "timestamp": "2026-04-20T19:29:41.106004",
+    "content": "Search can we Kiss Forever on YouTube.",
+    "timestamp": "2026-04-20T20:14:23.310538",
     "mode": "neural"
   },
   {
     "role": "user",
-    "content": "Close settings.",
-    "timestamp": "2026-04-20T19:31:21.048586",
+    "content": "Play the song.",
+    "timestamp": "2026-04-20T20:14:43.876635",
     "mode": "neural"
   },
   {
     "role": "user",
-    "content": "Search hello world on 10 GPT.",
-    "timestamp": "2026-04-20T19:31:51.467045",
+    "content": "Search Pokemon on YouTube.",
+    "timestamp": "2026-04-20T20:15:12.684674",
     "mode": "neural"
-  },
-  {
-    "role": "user",
-    "content": "Generate image of Pikachu.",
-    "timestamp": "2026-04-20T19:32:34.353127",
-    "mode": "neural"
-  },
-  {
-    "role": "user",
-    "content": "Turn on scanning mode.",
-    "timestamp": "2026-04-20T19:34:51.809662",
-    "mode": "neural"
-  },
-  {
-    "role": "user",
-    "content": "Turn on neural mode.",
-    "timestamp": "2026-04-20T19:35:22.622310",
-    "mode": "scanning"
-  },
-  {
-    "role": "user",
-    "content": "Turned security mode.",
-    "timestamp": "2026-04-20T19:35:50.397751",
-    "mode": "neural"
-  },
-  {
-    "role": "user",
-    "content": "Turn on neural mode.",
-    "timestamp": "2026-04-20T19:37:28.265100",
-    "mode": "security"
   },
   {
     "role": "user",
     "content": "Take screenshot.",
-    "timestamp": "2026-04-20T19:41:52.723777",
+    "timestamp": "2026-04-20T20:16:57.512797",
     "mode": "neural"
   },
   {
     "role": "user",
-    "content": "Open WhatsApp and spotify.",
-    "timestamp": "2026-04-20T19:42:10.890744",
+    "content": "Search news.",
+    "timestamp": "2026-04-20T20:17:33.173901",
     "mode": "neural"
   },
   {
     "role": "user",
-    "content": "Ta has DND mode.",
-    "timestamp": "2026-04-20T19:43:40.487150",
+    "content": "Open settings.",
+    "timestamp": "2026-04-20T20:18:18.662511",
     "mode": "neural"
   },
   {
     "role": "user",
-    "content": "Turn on DND mode.",
-    "timestamp": "2026-04-20T19:44:44.266212",
+    "content": "Open chat GPT.",
+    "timestamp": "2026-04-20T20:18:32.748111",
     "mode": "neural"
   },
   {
     "role": "user",
-    "content": "Turn on do not disturb mode.",
-    "timestamp": "2026-04-20T19:45:33.575000",
+    "content": "Turn on security Demons.",
+    "timestamp": "2026-04-20T20:20:43.709428",
     "mode": "neural"
   },
   {
     "role": "user",
-    "content": "Open settings and take a screenshot.",
-    "timestamp": "2026-04-20T19:45:45.982864",
+    "content": "Town on security model.",
+    "timestamp": "2026-04-20T20:21:37.860630",
     "mode": "neural"
   },
   {
     "role": "user",
-    "content": "Turn on screen recording.",
-    "timestamp": "2026-04-20T19:46:03.991443",
+    "content": "Checking this link is safe or not.",
+    "timestamp": "2026-04-20T20:26:59.307592",
+    "mode": "security"
+  },
+  {
+    "role": "user",
+    "content": "Turn on security mode.",
+    "timestamp": "2026-04-20T20:40:49.242743",
     "mode": "neural"
   },
   {
     "role": "user",
-    "content": "Open 4 GPT.",
-    "timestamp": "2026-04-20T19:47:41.021284",
+    "content": "Take screenshot.",
+    "timestamp": "2026-04-20T20:43:39.076712",
+    "mode": "security"
+  },
+  {
+    "role": "user",
+    "content": "Check if this your really safe or not.",
+    "timestamp": "2026-04-20T20:44:13.227647",
+    "mode": "security"
+  },
+  {
+    "role": "user",
+    "content": "Turn on security mode.",
+    "timestamp": "2026-04-20T21:11:51.008383",
     "mode": "neural"
   },
   {
     "role": "user",
-    "content": "Turn on companion mode.",
-    "timestamp": "2026-04-20T19:49:21.715722",
+    "content": "Activate scanning mode.",
+    "timestamp": "2026-04-20T21:12:04.938172",
+    "mode": "security"
+  },
+  {
+    "role": "user",
+    "content": "Activity neural mode.",
+    "timestamp": "2026-04-20T21:12:22.143598",
+    "mode": "scanning"
+  },
+  {
+    "role": "user",
+    "content": "Activate companion mode.",
+    "timestamp": "2026-04-20T21:12:33.679612",
     "mode": "neural"
   },
   {
     "role": "user",
-    "content": "Do you know who i like?",
-    "timestamp": "2026-04-20T19:50:04.465856",
+    "content": "Do you know Vishakha?",
+    "timestamp": "2026-04-20T21:13:00.630504",
     "mode": "companion"
   },
   {
     "role": "user",
-    "content": "Turner neural mode.",
-    "timestamp": "2026-04-20T19:51:16.651314",
+    "content": "Take a screenshot.",
+    "timestamp": "2026-04-20T21:14:52.269334",
+    "mode": "companion"
+  },
+  {
+    "role": "user",
+    "content": "Generate image of Pikachu.",
+    "timestamp": "2026-04-20T21:15:01.110411",
+    "mode": "companion"
+  },
+  {
+    "role": "user",
+    "content": "Open settings.",
+    "timestamp": "2026-04-20T21:17:45.927520",
     "mode": "companion"
   }
 ]
