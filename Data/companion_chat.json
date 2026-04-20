@@ -125,12 +125,7 @@
     "timestamp": "2026-04-20T21:12:33.679612",
     "mode": "neural"
   },
-  {
-    "role": "user",
-    "content": "Do you know Vishakha?",
-    "timestamp": "2026-04-20T21:13:00.630504",
-    "mode": "companion"
-  },
+  
   {
     "role": "user",
     "content": "Take a screenshot.",
