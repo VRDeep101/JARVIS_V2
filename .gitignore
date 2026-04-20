@@ -59,4 +59,3 @@ tts_*.wav
 
 # Chrome driver
 chromedriver.exe
-Data\companion_chat.json
