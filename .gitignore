@@ -1,0 +1,60 @@
+# ═══════════════════════════════════════════
+#  Jarvis V2 — Git Ignore Rules
+# ═══════════════════════════════════════════
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.pytest_cache/
+
+# Virtual Environment
+.venv/
+venv/
+env/
+ENV/
+
+# Environment Variables (SENSITIVE)
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Jarvis-specific — User Data (never push)
+Memories/
+Data/ChatLog.json
+Data/notifications.json
+Data/Images/
+Data/Screenshots/
+Data/Recordings/
+Data/Cache/
+Data/SelfEdits/
+Logs/
+
+# Jarvis-specific — Temp / Runtime
+*.tmp
+*.bak
+*.log
+tts_*.mp3
+tts_*.wav
+
+# Kokoro model files (huge, keep local)
+*.onnx
+*.bin
+
+# Chrome driver
+chromedriver.exe

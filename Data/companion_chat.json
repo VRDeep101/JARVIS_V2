@@ -1,0 +1,152 @@
+[
+  {
+    "role": "assistant",
+    "content": "Got it, Sir. Blue it is.",
+    "timestamp": "2026-04-19T22:26:47.964744",
+    "mode": "neural"
+  },
+  {
+    "role": "user",
+    "content": "my favorite color is blue",
+    "timestamp": "2026-04-19T22:27:49.174601",
+    "mode": "offline"
+  },
+  {
+    "role": "assistant",
+    "content": "Got it, Sir. Blue it is.",
+    "timestamp": "2026-04-19T22:27:49.174601",
+    "mode": "offline"
+  },
+  {
+    "role": "user",
+    "content": "Open settings.",
+    "timestamp": "2026-04-20T19:26:38.296595",
+    "mode": "neural"
+  },
+  {
+    "role": "user",
+    "content": "Open Google Chrome and WhatsApp.",
+    "timestamp": "2026-04-20T19:27:10.208193",
+    "mode": "neural"
+  },
+  {
+    "role": "user",
+    "content": "Open WhatsApp.",
+    "timestamp": "2026-04-20T19:28:12.534325",
+    "mode": "neural"
+  },
+  {
+    "role": "user",
+    "content": "Send hi to Panda.",
+    "timestamp": "2026-04-20T19:29:41.106004",
+    "mode": "neural"
+  },
+  {
+    "role": "user",
+    "content": "Close settings.",
+    "timestamp": "2026-04-20T19:31:21.048586",
+    "mode": "neural"
+  },
+  {
+    "role": "user",
+    "content": "Search hello world on 10 GPT.",
+    "timestamp": "2026-04-20T19:31:51.467045",
+    "mode": "neural"
+  },
+  {
+    "role": "user",
+    "content": "Generate image of Pikachu.",
+    "timestamp": "2026-04-20T19:32:34.353127",
+    "mode": "neural"
+  },
+  {
+    "role": "user",
+    "content": "Turn on scanning mode.",
+    "timestamp": "2026-04-20T19:34:51.809662",
+    "mode": "neural"
+  },
+  {
+    "role": "user",
+    "content": "Turn on neural mode.",
+    "timestamp": "2026-04-20T19:35:22.622310",
+    "mode": "scanning"
+  },
+  {
+    "role": "user",
+    "content": "Turned security mode.",
+    "timestamp": "2026-04-20T19:35:50.397751",
+    "mode": "neural"
+  },
+  {
+    "role": "user",
+    "content": "Turn on neural mode.",
+    "timestamp": "2026-04-20T19:37:28.265100",
+    "mode": "security"
+  },
+  {
+    "role": "user",
+    "content": "Take screenshot.",
+    "timestamp": "2026-04-20T19:41:52.723777",
+    "mode": "neural"
+  },
+  {
+    "role": "user",
+    "content": "Open WhatsApp and spotify.",
+    "timestamp": "2026-04-20T19:42:10.890744",
+    "mode": "neural"
+  },
+  {
+    "role": "user",
+    "content": "Ta has DND mode.",
+    "timestamp": "2026-04-20T19:43:40.487150",
+    "mode": "neural"
+  },
+  {
+    "role": "user",
+    "content": "Turn on DND mode.",
+    "timestamp": "2026-04-20T19:44:44.266212",
+    "mode": "neural"
+  },
+  {
+    "role": "user",
+    "content": "Turn on do not disturb mode.",
+    "timestamp": "2026-04-20T19:45:33.575000",
+    "mode": "neural"
+  },
+  {
+    "role": "user",
+    "content": "Open settings and take a screenshot.",
+    "timestamp": "2026-04-20T19:45:45.982864",
+    "mode": "neural"
+  },
+  {
+    "role": "user",
+    "content": "Turn on screen recording.",
+    "timestamp": "2026-04-20T19:46:03.991443",
+    "mode": "neural"
+  },
+  {
+    "role": "user",
+    "content": "Open 4 GPT.",
+    "timestamp": "2026-04-20T19:47:41.021284",
+    "mode": "neural"
+  },
+  {
+    "role": "user",
+    "content": "Turn on companion mode.",
+    "timestamp": "2026-04-20T19:49:21.715722",
+    "mode": "neural"
+  },
+  {
+    "role": "user",
+    "content": "Do you know who i like?",
+    "timestamp": "2026-04-20T19:50:04.465856",
+    "mode": "companion"
+  },
+  {
+    "role": "user",
+    "content": "Turner neural mode.",
+    "timestamp": "2026-04-20T19:51:16.651314",
+    "mode": "companion"
+  }
+]
