@@ -62,19 +62,65 @@ FACT_PATTERNS = [
 # Name detection (capitalized words that might be names)
 NAME_PATTERN = re.compile(r"\b([A-Z][a-z]{2,20})\b")
 
-# Stop words (not names)
+# Personal-statement keywords — if none are present the message is almost
+# certainly a command (e.g. "Search YouTube") and we should NOT scan for names.
+# This avoids STT-capitalised command verbs being mistakenly saved as people.
+PERSONAL_STATEMENT_KEYWORDS = re.compile(
+    r"\b(?:my|mine|i\s+am|i'm|i\s+live|i\s+love|i\s+like|i\s+hate|i\s+want|"
+    r"i\s+plan|i\s+enjoy|i\s+work|remember|save|vishakha|naveen|"
+    r"friend|girlfriend|boyfriend|wife|husband|crush|mom|mother|dad|father|"
+    r"sister|brother|birthday|anniversary)\b",
+    re.IGNORECASE,
+)
+
+# Stop words (not names) — includes common STT-capitalised command verbs so
+# that words like "Search", "Open", "Find" etc. are never saved as people.
 NAME_STOPWORDS = {
+    # Apps / services
     "jarvis", "sir", "google", "chrome", "youtube", "spotify",
     "python", "javascript", "java", "claude", "chatgpt", "gemini",
+    "whatsapp", "gmail", "facebook", "instagram", "twitter",
+    # Days
     "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday",
+    # Months
     "january", "february", "march", "april", "may", "june", "july",
     "august", "september", "october", "november", "december",
-    "whatsapp", "gmail", "facebook", "instagram", "twitter",
+    # Generic greetings / words
     "open", "close", "play", "stop", "hello", "hi", "hey",
     "good", "morning", "afternoon", "evening", "night",
+    # Places
     "india", "pune", "mumbai", "delhi",
-    "risky", "deep",  # user's own names
+    # User's own names / callsigns
+    "risky", "deep",
+    # -------------------------------------------------------
+    # Command verbs that STT capitalises at sentence start.
+    # Without these, "Search YouTube" → person "Search",
+    # "Find me a song" → person "Find", etc.
+    # -------------------------------------------------------
+    "search", "find", "show", "send", "call", "take", "make",
+    "navigate", "switch", "turn", "set", "get", "check", "run",
+    "play", "pause", "resume", "skip", "next", "previous", "back",
+    "create", "delete", "update", "read", "write", "save", "load",
+    "download", "upload", "install", "launch", "start", "stop",
+    "enable", "disable", "lock", "unlock", "restart", "shutdown",
+    "tell", "give", "show", "list", "display", "scan", "analyze",
+    "analyze", "analyse", "type", "click", "scroll", "zoom",
+    "screenshot", "record", "capture", "copy", "paste", "move",
+    "rename", "refresh", "reload", "fetch", "pull", "push",
+    "connect", "disconnect", "pair", "unpair", "add", "remove",
+    "increase", "decrease", "raise", "lower", "mute", "unmute",
+    "volume", "brightness", "battery", "timer", "alarm", "remind",
+    "schedule", "cancel", "confirm", "yes", "sure", "okay", "ok",
+    "also", "just", "please", "thanks", "thank", "sorry", "with",
+    "that", "this", "then", "there", "here", "what", "when",
+    "where", "which", "how", "why", "who", "can", "will", "would",
+    "should", "could", "might", "must", "shall", "have", "has",
+    "had", "does", "did", "was", "were", "been", "being",
+    # Weather / misc
+    "weather", "news", "time", "date", "today", "tomorrow",
+    "yesterday", "now", "latest", "current", "recent",
 }
+
 
 class ContinuousLearner:
     """Learns from every user message in background."""
@@ -120,8 +166,17 @@ class ContinuousLearner:
             # 2. Pattern extraction
             self._extract_facts(q_lower, query)
             
-            # 3. Name extraction
-            self._extract_names(query)
+            # 3. Name extraction — only run for personal statements, not commands.
+            #    STT capitalises the first word of every utterance, which means
+            #    command phrases like "Search YouTube" or "Open Spotify" would
+            #    otherwise get "Search" / "Open" saved as person names.
+            #    We gate on personal-statement keywords so pure commands are
+            #    skipped.  Location facts are handled by _extract_facts via
+            #    regex and are NOT affected by this guard.
+            if PERSONAL_STATEMENT_KEYWORDS.search(query):
+                self._extract_names(query)
+            else:
+                log.debug(f"Learner: skipping name scan for command-style input: {query[:50]}")
             
             # 4. Periodic cleanup
             if time.time() - self.last_cleanup > self.cleanup_interval:
@@ -175,6 +230,8 @@ class ContinuousLearner:
                 memory.save_fact(f"Sir is {value} years old", category="identity", confidence=5)
             
             elif category == "location":
+                # Location facts are saved here — NOT affected by the name-extraction
+                # guard above.  "i live in Pune" still saves correctly.
                 memory.save_fact(f"Sir lives in {value.title()}", category="location", confidence=3)
             
             elif category == "like":
@@ -200,7 +257,12 @@ class ContinuousLearner:
                 log.info(f"Explicit memory: {value[:50]}")
     
     def _extract_names(self, query: str):
-        """Find capitalized names that aren't stopwords."""
+        """Find capitalized names that aren't stopwords.
+        
+        Only called when the query contains personal-statement keywords
+        (see _analyze_sync guard), so STT-capitalised command verbs that
+        appear at the start of a sentence are never processed here.
+        """
         matches = NAME_PATTERN.findall(query)
         for name in matches:
             if name.lower() in NAME_STOPWORDS:
@@ -244,6 +306,7 @@ class ContinuousLearner:
             return None
         return self.query_counter.most_common(1)[0][0]
 
+
 # -- Singleton ------------------------------------------------
 learner = ContinuousLearner()
 # Alias for Main.py
@@ -276,6 +339,11 @@ if __name__ == "__main__":
         "remember that I prefer dark mode",
         "I'm working on my YouTube channel with Naveen",
         "Vishakha's birthday is in August",
+        # These should NOT save any person name:
+        "Search YouTube.",
+        "Open Spotify.",
+        "Check url.",
+        "Find me a song.",
     ]
     
     print("Analyzing queries...\n")
@@ -296,4 +364,4 @@ if __name__ == "__main__":
     for topic, count in insights['top_topics'][:5]:
         print(f"  {topic}: {count}")
     
-    print("\n[OK] ContinuousLearner test complete\n")
+    print("\n[OK] ContinuousLearner test complete\n")   
